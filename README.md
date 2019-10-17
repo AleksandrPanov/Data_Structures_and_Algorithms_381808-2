@@ -5,6 +5,8 @@
 
 Шаблон первой лабораторной работы: [https://github.com/LebedevIlyaG/mp2-lab1-set]
 
+Шаблон второй лабораторной работы: [https://github.com/PanovaElena/mp2-lab2-matrix]
+
 Gitter-чат: [https://gitter.im/Data_Structures_and_Algorithms_381808/community]
 
 Страница курса: [http://www.itmm.unn.ru/courses/algoritmy-i-struktury-dannyh]
