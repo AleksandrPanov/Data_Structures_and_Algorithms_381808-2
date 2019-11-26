@@ -1,0 +1,24 @@
+Реализовать односвязный список List
+class List состоит из структур Node
+struct Node
+{
+ std::string data;
+ Node* next = 0;
+ Node(std::string d): data(d) {}
+};
+
+class List
+{
+ Node* head = 0; 
+public:
+ List();
+ List(const List& l);
+ 
+ int get_size();
+ Node* get_tail();//возвращает указатель на последний Node списка
+ void push_back(string data);
+ void insert(int index, string data);
+ void delete(int index);
+ 
+ ~List();
+};
