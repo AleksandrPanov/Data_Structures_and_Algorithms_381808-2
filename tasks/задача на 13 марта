@@ -3,3 +3,21 @@
 (иерархический связный список)
 
 http://www.unn.ru/books/met_files/Pract_ADS.pdf
+class MyList
+{
+	Node *first;
+	Node *end;
+public:	
+	void push_back(sting data, int level);
+	void pop();
+	void print();
+	~MyList();
+}
+struct Node
+{
+	string data;
+	Node *next;
+	Node *down;
+	int level;
+}
+cout << level << ". " << data << "\n";
