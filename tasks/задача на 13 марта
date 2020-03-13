@@ -6,36 +6,41 @@ http://www.unn.ru/books/met_files/Pract_ADS.pdf
 
 
 using namespace std;
-struct Iterator
-{
-	Node *it;
-	pair<int, string>& operator*();
-	pair<int, string>& operator->();
-	
-	Iterator next();
-	Iterator endNext();//"идет вправо до упора"
-	Iterator nextLevel();
-	Iterator endNextLevel();//"идет вниз до упора"
-	
-	void insNext(string data); //"добавляет новый Node в next"
-	void insDown(string data); //"добавляет новый Node в down"
-}
-class MyList
-{
-	Node *first;
-	Node *end;
-public:	
-	void push_back_current_level(sting data);
-	void push_back_next_level(string data);
-	pair<int, string> pop();
-	void print();
-	~MyList();
-}
 struct Node
 {
 	string data;
 	Node *next;
 	Node *down;
 	int level;
+}
+struct MyIterator
+{
+	Node *it;
+	pair<int, string>& operator*();
+	pair<int, string>& operator->();
+	
+	MyIterator next();//"идет вправо"
+	MyIterator endNext();//"идет вправо до упора"
+	MyIterator nextLevel();//"идет вниз"
+	MyIterator endNextLevel();//"идет вниз до упора"
+	
+	void insNext(string data); //"добавляет новый Node в next"
+	void insDown(string data); //"добавляет новый Node в down"
+	
+	bool operator==(const MyIterator& iterator);
+	bool operator!=(const MyIterator& iterator);
+}
+class MyList
+{
+	Node *begin;
+	Node *end;
+public:	
+	MyIterator begin();
+	MyIterator end();
+	void push_back_current_level(sting data);
+	void push_back_next_level(string data);
+	pair<int, string> pop();
+	void print();
+	~MyList();
 }
 cout << level << ". " << data << "\n";
