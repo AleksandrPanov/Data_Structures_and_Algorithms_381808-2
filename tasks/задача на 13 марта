@@ -37,8 +37,8 @@ class MyList
 public:	
 	MyIterator begin();
 	MyIterator end();
-	void push_back_current_level(sting data);
-	void push_back_next_level(string data);
+	void push_back_current_level(sting data); //"новый Node в end->next"
+	void push_back_next_level(string data); //"новый Node в end->down"
 	pair<int, string> pop();
 	void print();
 	~MyList();
