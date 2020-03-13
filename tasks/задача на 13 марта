@@ -3,13 +3,22 @@
 (иерархический связный список)
 
 http://www.unn.ru/books/met_files/Pract_ADS.pdf
+using namespace std;
+struct Iterator
+{
+	Node *it;
+	pair<int, string>& operator*();
+	pair<int, string>& operator->();
+	void operator++();
+}
 class MyList
 {
 	Node *first;
 	Node *end;
 public:	
-	void push_back(sting data, int level);
-	void pop();
+	void push_back_current_level(sting data);
+	void push_back_next_level(string data);
+	pair<int, string> pop();
 	void print();
 	~MyList();
 }
