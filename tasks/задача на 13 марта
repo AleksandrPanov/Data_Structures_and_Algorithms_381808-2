@@ -16,8 +16,8 @@ struct Node
 struct MyIterator
 {
 	Node *it;
-	pair<int, string>& operator*();
-	pair<int, string>& operator->();
+	Node& operator*();
+	Node& operator->();
 	
 	MyIterator next(); //"идет вправо"
 	//если next == 0, то бросается исключение
