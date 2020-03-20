@@ -19,10 +19,15 @@ struct MyIterator
 	pair<int, string>& operator*();
 	pair<int, string>& operator->();
 	
-	MyIterator next();//"идет вправо"
-	MyIterator endNext();//"идет вправо до упора"
-	MyIterator nextLevel();//"идет вниз"
-	MyIterator endNextLevel();//"идет вниз до упора"
+	MyIterator next(); //"идет вправо"
+	//если next == 0, то бросается исключение
+	MyIterator endNext(); //"идет вправо до упора"
+	MyIterator down(); //"идет вниз"
+	//если down == 0, то бросается исключение
+	MyIterator endDown(); //"идет вниз до упора"
+	
+	bool isNext(); //return (next != 0);
+	bool isDown(); //return (down != 0);
 	
 	void insNext(string data); //"добавляет новый Node в next"
 	void insDown(string data); //"добавляет новый Node в down"
